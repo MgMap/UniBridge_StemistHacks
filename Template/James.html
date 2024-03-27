@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile Feed</title>
+  <link rel="stylesheet" href="/css/James.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1>UniBridge</h1>
+    </nav>
+  </header>
+
+  <main>
+    <!-- User Profile Section -->
+    <section class="user-profile">
+      <div class="profile-image">
+        <label for="profilePictureInput">
+          <img id="profilePicture" src="Assets/James Profile.jpg" alt="Profile Picture">
+          <div class="edit-icon">
+            <i class="fas fa-camera"></i>
+          </div>
+        </label>
+        <input type="file" accept="image/*" id="profilePictureInput" onchange="previewImage(event)">
+      </div>
+      <div class="profile-info">
+        <h2 contenteditable="true" id="userName">John Doe</h2>
+        <p contenteditable="true" id="userSchoolYear">Class of 2023</p>
+        <p contenteditable="true" id="userIntendedMajor">Computer Science</p>
+        <p contenteditable="true" id="userInterests">Music, Photography</p>
+        <!-- Add more personalized fields here... -->
+        <button onclick="openEditProfile()">Edit Profile</button>
+      </div>
+    </section>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+      <div class="modal-content">
+        <h2>Edit Profile</h2>
+        <input type="text" id="editUserName" placeholder="Full Name">
+        <input type="text" id="editUserSchoolYear" placeholder="School Year">
+        <input type="text" id="editUserIntendedMajor" placeholder="Intended Major">
+        <input type="text" id="editUserInterests" placeholder="Interests">
+        <!-- Add more personalized fields here... -->
+        <button onclick="saveEditProfile()">Save</button>
+        <button onclick="closeEditProfile()">Cancel</button>
+      </div>
+    </div>
+
+    <section class="post-form">
+      <textarea id="postContent"
+        placeholder="Share your achievements, projects, and student life experiences..."></textarea>
+      <button onclick="submitPost()">Post</button>
+    </section>
+
+    <section class="post-feed" id="postFeed">
+      <!-- Posts will be dynamically added here -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; UniBridge</p>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+  <script src="/Javascript Files/account.js"></script>
+
+  <button onclick="goToAnotherPage()">Scholarships</button>
+
+  <script>
+    function goToAnotherPage() {
+      // Remove the second argument "_blank" to open the link in the current tab
+      window.open("https://frontend-hackathon.thetpaingdana.repl.co/Template/scholarships.html");
+    }
+  </script>
+
+</body>
+
+</html>

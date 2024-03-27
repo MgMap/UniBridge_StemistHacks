@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Register Form</title>
+		<link href="css/formdesign.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+    <div class ="testimonial-container">
+      <center><img class = "logo" src = "Assets/Unibridge_Logo_png.png"  width ="300px" alt = "logo"></center>
+  
+      <b class = testimonial>
+        An Unparalleled Pathway to My Dream College!
+      </b>
+     
+      <p class = "testimonial">
+        "This website has been an absolute game-changer in my college application journey. Whenever I had a question or concern, the customer support team responded promptly and empathetically. Their commitment to ensuring my success in the college application process was evident in every interaction.
+
+As a result of using this website, I am thrilled to say that I have been accepted into my dream college!"
+      </p>
+
+      <p class = "sign">
+        -Sydney Ngo &nbsp<br>
+        High School Senior &nbsp   
+      </p>
+      
+    
+    </div>
+		<div class="container">
+			
+      <h2>Create New Account</h2>
+
+
+			<form id="createAccount" class="form" action="" method="">
+
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input type="text" name="username" id="username" class="form-control" placeholder="Enter username" />
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" class="form-control" placeholder="Enter email"
+					 />
+				</div>
+				<div class="form-group">
+					<label for="DOB">DOB</label>
+					<input type="date" name="DOB" id="DOB" class="form-control" placeholder="Enter Date of Birth (MM/DD/YY)"
+					 />
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password" class="form-control" placeholder="Enter password"
+					 />
+				</div>
+
+				<div class="form-group">
+					<label for="cfpassword">Confirm Password</label>
+					<input type="password" name="cfpassword" id="cfpassword" class="form-control" placeholder="Enter confirm password"
+					 />
+				</div>
+        
+				<button type="button" onclick="createUserAndLogin()" name="submit" id="submit" class="btn">Submit</button>
+        
+        <a href="https://frontend-hackathon.thetpaingdana.repl.co/Template/discussion.html" id="logo-link">
+          Log into existing account &#9786;
+        </a>
+			</form>
+		</div>
+    <script src = "script.js"></script>
+	</body>
+</html>

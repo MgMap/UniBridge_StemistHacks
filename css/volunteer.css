@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+  
+    background-color: #f0f0f0;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/003/127/954/original/abstract-template-blue-background-white-squares-free-vector.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    display: flex; /* Use flexbox to center content */
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 600px;
+    height: 50px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+li:hover {
+    transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #007bff;
+}
+
+#logo-link {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+#logo-image {
+    width: 100px;
+    height: 120px;
+}

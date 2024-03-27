@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
+
+:root {
+  --wcc: #f4f4f4;
+  --gyc: #777;
+  --dbc: #0c09b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background-color: #f0f0f0;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/003/127/954/original/abstract-template-blue-background-white-squares-free-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+.testimonial-container {
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  width: 700px;
+  font-size: 30px;
+  margin-left: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial {
+  font-size: 20px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.sign {
+  text-align: right;
+  font-size: 20px;
+}
+
+.container {
+  width: 480px;
+  background-color: var(--wcc);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.container .form {
+  padding: 30px 40px;
+}
+
+.form .form-group {
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--gyc);
+  margin-bottom: 5px;
+}
+
+.form-group .form-control {
+  width: 100%;
+  padding: 10px;
+  font-family: inherit;
+}
+
+.form-group .form-control::placeholder {
+  font-family: Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.form .btn {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  background-color: var(--dbc);
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add margin to the link */
+#logo-link {
+  margin-top: 50px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}

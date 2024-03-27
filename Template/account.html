@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile Feed</title>
+  <link rel="stylesheet" href="/css/account.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-3Dzvm3vuVx9c6h7fsntAnk3JyJk0FN3/CupXtRJG6B3EafZoMI0ifM/hN1Fj8W/Q4N6N71xDUI7ZzK5C1ThfQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+  <a href="https://frontend-hackathon.thetpaingdana.repl.co/Template/discussion.html" id="logo-link">
+    <img src="../Assets/Unibridge_Logo_png.png" alt="Logo" width="200" height="100" id="logo-image">
+  </a>
+  </header>
+  <main>
+    
+    <!-- User Profile Section -->
+   <div class="user-profile">
+    <div class="cover-photo">
+        <!-- Add your cover photo here -->
+    </div>
+    <div class="profile-info">
+        <div class="profile-image">
+            <!-- Add your profile photo here -->
+            <label for="profilePhotoInput" class="profile-image-edit">
+                <i class="fa fa-camera"></i> Change Profile Photo
+            </label>
+            <input type="file" id="profilePhotoInput" accept="image/*">
+        </div>
+        <div class="profile-info">
+            <h2 contenteditable="true" id="userName" data-placeholder="Name">John Doe</h2>
+            <p contenteditable="true" id="userSchoolYear" data-placeholder="School Year">Class of 2023</p>
+            <p contenteditable="true" id="userIntendedMajor" data-placeholder="Intended Major">Computer Science</p>
+            <p contenteditable="true" id="userInterests" data-placeholder="Interests">Music, Photography</p>
+            <!-- Add more personalized fields here... -->
+            <button onclick="openEditProfile()">Edit Profile</button>
+        </div>
+    </section>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Profile</h2>
+            <input type="text" id="editUserName" placeholder="Full Name">
+            <input type="text" id="editUserSchoolYear" placeholder="School Year">
+            <input type="text" id="editUserIntendedMajor" placeholder="Intended Major">
+            <input type="text" id="editUserInterests" placeholder="Interests">
+            <!-- Add more personalized fields here... -->
+            <button onclick="saveEditProfile()">Save</button>
+            <button onclick="closeEditProfile()">Cancel</button>
+        </div>
+    </div>
+   <!-- Change Cover Photo Modal -->
+<div id="changeCoverPhotoModal" class="modal">
+    <div class="modal-content">
+        <h2>Change Cover Photo</h2>
+        <!-- Add Unsplash search and selection components here -->
+        <button onclick="uploadCoverPhoto()">Done</button>
+        <button onclick="closeModal('changeCoverPhotoModal')">Cancel</button>
+    </div>
+</main>
+
+    <div class="switch-tabs">
+            <button class="switch-tab active" id="postsTab" onclick="switchTab('postsTab')">Posts</button>
+            <button class="switch-tab" id="aboutTab" onclick="switchTab('aboutTab')">About</button>
+        </div>
+
+  <!-- Posts Section -->
+    <section class="posts-section" id="postsSection">
+      <section class="post-form">
+      <textarea id="postContent"
+        placeholder="Share your achievements, projects, and student life experiences..."></textarea>
+      <button onclick="submitPost()">Post</button>
+    </section>
+   
+    <section class="post-feed" id="postFeed">
+      <!-- Posts will be dynamically added here -->
+    </section>
+  </section>
+
+ <!-- About Section -->
+    <div class="about-section" id="aboutSection">
+        <!-- Interests Section -->
+        <div class="interests-section">
+            <h3>Interests</h3>
+            <ul id="interestsList">
+                <!-- Interests will be dynamically added here -->
+            </ul>
+            <button onclick="openModal('editInterestsModal')">Edit Interests</button>
+        </div>
+
+        <!-- Education Section -->
+        <div class="education-section">
+            <h3>Education</h3>
+            <p>Year: <span id="educationYear">Class of 2023</span></p>
+            <p>Subjects: <span id="educationSubjects">Computer Science, Mathematics, Physics</span></p>
+            <p>Academic Type: <span id="educationAcademicType">IB</span></p>
+            <p>Grades: <span id="educationGrades">A, A, B</span></p>
+            <button onclick="openModal('editEducationModal')">Edit Education</button>
+        </div>
+
+ <!-- Edit Interests Modal -->
+<div id="editInterestsModal" class="modal">
+    <div class="modal-content">
+        <h2>Edit Interests</h2>
+        <label for="interestsInput">Select your interests:</label>
+        <select id="interestsInput" size="6" multiple>
+            <option value="Music">Music</option>
+            <option value="Photography">Photography</option>
+            <option value="Sports">Sports</option>
+            <option value="Technology">Technology</option>
+            <option value="Arts">Arts</option>
+            <option value="Drama">Drama</option>
+            <!-- Add more interests as needed -->
+        </select>
+        <button onclick="saveInterests()">Save</button>
+        <button onclick="closeModal('editInterestsModal')">Cancel</button>
+    </div>
+</div>
+
+      
+<!-- Edit Education Modal -->
+<div id="editEducationModal" class="modal">
+    <div class="modal-content">
+        <h2>Edit Education</h2>
+        <label for="educationYearInput">Year:</label>
+        <input type="text" id="educationYearInput">
+        <label for="educationSubjectsInput">Subjects:</label>
+        <input type="text" id="educationSubjectsInput">
+        <label for="educationAcademicTypeInput">Academic Type:</label>
+        <input type="text" id="educationAcademicTypeInput">
+        <label for="educationGradesInput">Grades:</label>
+        <input type="text" id="educationGradesInput">
+        <button onclick="saveEducation()">Save</button>
+        <button onclick="closeModal('editEducationModal')">Cancel</button>
+    </div>
+</div>
+</section>
+</main>
+  
+  <footer>
+    <p>&copy; UniBridge</p>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+  <script src="/Javascript Files/account.js"></script>
+
+  <button onclick="goToAnotherPage()">Scholarships</button>
+
+  <script>
+    function goToAnotherPage() {
+      // Remove the second argument "_blank" to open the link in the current tab
+      window.open("https://frontend-hackathon.thetpaingdana.repl.co/Template/scholarships.html");
+    }
+  </script>
+
+</body>
+
+</html>
